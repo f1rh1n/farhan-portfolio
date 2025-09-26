@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, easeInOut, easeOut } from "framer-motion"
 import { useState, useEffect } from "react"
 
 export function FightingAnimation() {
@@ -27,14 +27,14 @@ export function FightingAnimation() {
       transition: {
         duration: 5,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: easeInOut
       }
     },
     interrupted: {
       x: 0,
       y: 0,
       rotate: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: easeOut }
     }
   }
 
@@ -46,7 +46,7 @@ export function FightingAnimation() {
       transition: {
         duration: 4,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: easeInOut,
         delay: 1
       }
     },
@@ -54,7 +54,7 @@ export function FightingAnimation() {
       x: 0,
       y: 0,
       rotate: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: easeOut }
     }
   }
 
@@ -66,7 +66,7 @@ export function FightingAnimation() {
       transition: {
         duration: 6,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: easeInOut,
         delay: 2
       }
     },
@@ -74,7 +74,7 @@ export function FightingAnimation() {
       x: 0,
       y: 0,
       rotate: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: easeOut }
     }
   }
 
@@ -86,7 +86,7 @@ export function FightingAnimation() {
       transition: {
         duration: 7,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: easeInOut,
         delay: 3
       }
     },
@@ -94,7 +94,7 @@ export function FightingAnimation() {
       x: 0,
       y: 0,
       rotate: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: easeOut }
     }
   }
 
@@ -106,7 +106,7 @@ export function FightingAnimation() {
       transition: {
         duration: 2,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: easeInOut
       }
     },
     interrupted: {
@@ -125,7 +125,7 @@ export function FightingAnimation() {
       transition: {
         duration: 2,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: easeInOut,
         delay: 0.5
       }
     },
@@ -369,12 +369,12 @@ function DroneComponent() {
       <motion.div
         className="absolute -top-1 -left-2 w-6 h-0.5 bg-gray-400 rounded-full opacity-80"
         animate={{ rotate: 360 }}
-        transition={{ duration: 0.05, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 0.05, repeat: Infinity, ease: easeInOut }}
       />
       <motion.div
         className="absolute -bottom-2 -left-2 w-6 h-0.5 bg-gray-400 rounded-full opacity-80"
         animate={{ rotate: -360 }}
-        transition={{ duration: 0.05, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 0.05, repeat: Infinity, ease: easeInOut }}
       />
 
       {/* Laser beams */}
@@ -387,7 +387,7 @@ function DroneComponent() {
         transition={{
           duration: 0.3,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: easeInOut
         }}
       />
 
@@ -401,7 +401,7 @@ function DroneComponent() {
         transition={{
           duration: 1,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: easeInOut
         }}
       >
         ◉
@@ -417,7 +417,7 @@ function DroneComponent() {
         transition={{
           duration: 1.5,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: easeInOut
         }}
       >
         PEW!
