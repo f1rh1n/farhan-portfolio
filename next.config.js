@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Set explicit workspace root to avoid lockfile warnings
+  outputFileTracingRoot: require('path').resolve(__dirname),
+
   // Exclude problematic files from being processed
   webpack: (config, { isServer }) => {
     if (!isServer) {
