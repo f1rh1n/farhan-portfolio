@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import { StackRoulette } from "./stack-roulette"
 import {
@@ -11,7 +10,6 @@ import {
   Database,
   GitBranch,
   Monitor,
-  Shield,
   Award,
   Users
 } from "lucide-react"
@@ -151,7 +149,7 @@ export function About() {
                 viewport={{ once: true }}
                 className="grid grid-cols-2 sm:grid-cols-3 gap-4"
               >
-                {skills.map((skill, index) => {
+                {skills.map((skill) => {
                   const IconComponent = skill.icon
                   return (
                     <motion.div key={skill.name} variants={itemVariants}>

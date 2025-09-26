@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink, ArrowRight } from "lucide-react"
+import { Github, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { projects } from "@/lib/projects-data"
 
@@ -44,7 +44,7 @@ export function Projects() {
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A showcase of cloud infrastructure, DevOps automation, and AI-driven solutions I've built
+            A showcase of cloud infrastructure, DevOps automation, and AI-driven solutions I&apos;ve built
           </p>
         </motion.div>
 
@@ -55,7 +55,7 @@ export function Projects() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div key={project.title} variants={cardVariants}>
               <Card
                 className="group h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 bg-background/50 backdrop-blur-sm cursor-pointer"

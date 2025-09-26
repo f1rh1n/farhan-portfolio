@@ -19,9 +19,9 @@ export function Footer() {
 
           <div className="pt-4">
             <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
-              © 2025 Farhan Khan • Built with
+              © 2025 Farhan Khan
               <Heart className="w-4 h-4 text-red-500 fill-current" />
-              using Next.js & Tailwind CSS
+
             </p>
           </div>
         </motion.div>

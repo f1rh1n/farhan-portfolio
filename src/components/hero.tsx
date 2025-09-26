@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Download, ExternalLink } from "lucide-react"
+import { FightingAnimation } from "./fighting-animation"
 
 const techStack = [
   "AWS", "Docker", "Kubernetes", "Terraform", "Python", "LLMs", "CI/CD", "Linux"
@@ -41,6 +42,14 @@ export function Hero() {
           animate="visible"
           className="space-y-8"
         >
+          {/* Fighting Animation */}
+          <motion.div
+            variants={itemVariants}
+            className="flex justify-center"
+          >
+            <FightingAnimation />
+          </motion.div>
+
           <motion.div variants={itemVariants} className="space-y-4">
             <motion.h1
               className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight"

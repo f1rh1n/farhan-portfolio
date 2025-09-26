@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
+import { CursorHunterDrone } from "@/components/cursor-hunter-drone";
+import { NoSSR } from "@/components/no-ssr";
+import { HydrationWrapper } from "@/components/hydration-wrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,15 +42,47 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                if (typeof window !== 'undefined') {
+                  const cleanupExtensionAttributes = () => {
+                    ['bis_skin_checked', 'data-new-gr-c-s-check-loaded', 'data-gr-ext-installed', 'data-lt-installed'].forEach(attr => {
+                      document.querySelectorAll('[' + attr + ']').forEach(el => el.removeAttribute(attr));
+                    });
+                  };
+
+                  if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', cleanupExtensionAttributes);
+                  } else {
+                    cleanupExtensionAttributes();
+                  }
+                }
+              })();
+            `
+          }}
+        />
+      </head>
+      <body
+        className={`${inter.variable} font-sans antialiased`}
+        suppressHydrationWarning
+        style={{ opacity: 1 }}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
+          <HydrationWrapper>
+            <Navbar />
+            {children}
+            <NoSSR>
+              <CursorHunterDrone />
+            </NoSSR>
+          </HydrationWrapper>
         </ThemeProvider>
       </body>
     </html>

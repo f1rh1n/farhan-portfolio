@@ -10,10 +10,8 @@ import {
   Mail,
   Linkedin,
   Github,
-  Calendar,
   MapPin,
-  Send,
-  Phone
+  Send
 } from "lucide-react"
 
 const contactLinks = [
@@ -74,11 +72,11 @@ export function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm always interested in hearing about new opportunities and exciting projects.
-            Let's discuss how we can collaborate!
+            I&apos;m always interested in hearing about new opportunities and exciting projects.
+            Let&apos;s discuss how we can collaborate!
           </p>
         </motion.div>
 
@@ -155,7 +153,7 @@ export function Contact() {
               </Card>
             </motion.div>
 
-            {contactLinks.map((contact, index) => {
+            {contactLinks.map((contact) => {
               const IconComponent = contact.icon
               return (
                 <motion.div key={contact.name} variants={itemVariants}>
