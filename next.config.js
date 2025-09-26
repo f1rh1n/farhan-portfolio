@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Fix workspace root warning
-  outputFileTracingRoot: __dirname,
-
   // Exclude problematic files from being processed
   webpack: (config, { isServer }) => {
     if (!isServer) {
